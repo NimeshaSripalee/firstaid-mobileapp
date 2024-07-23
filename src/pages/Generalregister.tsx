@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { Button, ScrollView, Text, TextInput, TouchableOpacity, View } from 'react-native';
 import Welcome from '../components/welcome';
 import { users } from "../utils/data";
+import { registerGeneralUser } from '../api';
 
 function RegisterUser({ navigation }) {
     const [username, setUsername] = useState("");
@@ -9,6 +10,7 @@ function RegisterUser({ navigation }) {
     const [password, setPassword] = useState("");
     const [showPassword, setShowPassword] = useState(false);
     const [registerError, setRegisterError] = useState("");
+    const [registerLoading, setRegisterLoading] = useState(false);
 
     function onUsernameChanged(changedUsername) {
         setUsername(changedUsername);
@@ -33,8 +35,8 @@ function RegisterUser({ navigation }) {
     }
 
     function onClickRegister() {
-        console.log("Registering");
-
+        console.log("Registering ");
+        setRegisterError("")
         if (!username) {
             setRegisterError("Username is required");
             return;
@@ -75,14 +77,27 @@ function RegisterUser({ navigation }) {
             return;
         }
 
-        users.push({
-            username,
-            email,
-            password,
-            usertype: "general"
-        });
-
-        navigation.navigate("Home");
+        console.log("Calling the API")
+        setRegisterLoading(true)
+        registerGeneralUser(username, email, password).then((response)=>{
+            console.log("response recieve", response.status)
+            if(response.status == 400){
+                // Display an error message
+                setRegisterError("All fields are required.")
+            }else if(response.status >=  200 && response.status < 300){
+                navigation.navigate("Home");
+            }else if(response.status >= 500){
+                setRegisterError("User name already exists. Try another.")
+            }
+            // response.json().then(console.log)
+        }).catch(e=>{
+            console.log(e)
+            setRegisterError("Something went wrong. Please try again later.")
+        }).finally(()=>{
+            console.log("Finaling")
+            setRegisterLoading(false)
+        })
+ 
     }
 
     function toggleShowPassword() {
@@ -166,9 +181,9 @@ function RegisterUser({ navigation }) {
 
                 {registerError ? <Text style={{ color: "red", marginLeft: 20 }}>{registerError}</Text> : null}
 
-                <TouchableOpacity style={{ marginLeft: 80, marginRight: 80 }} onPress={onClickRegister}>
+                <TouchableOpacity disabled={registerLoading} style={{ marginLeft: 80, marginRight: 80 }} onPress={onClickRegister}>
                     <Text style={{
-                        backgroundColor: '#D21E5F',
+                        backgroundColor: registerLoading ? '#331E11' : '#D21E5F',
                         color: 'white',
                         fontSize: 50,
                         alignItems: 'center',

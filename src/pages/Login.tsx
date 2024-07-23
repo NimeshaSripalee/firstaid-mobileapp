@@ -4,11 +4,14 @@ import Welcome from '../components/welcome';
 import { Colors } from 'react-native/Libraries/NewAppScreen';
 import { useNavigation } from '@react-navigation/native';
 import { users } from '../utils/data';
+import { LoginUser } from '../api';
 
 function Login({ navigation }): React.JSX.Element {
     const [username, setUsername] = useState("");
     const [password, setPassword] = useState("");
     const [showPassword, setShowPassword] = useState(false);
+    const [LoginLoading, setLoginLoading] = useState(false);
+    const [LoginError, setLoginError] = useState("");
 
     function onUsernameChanged(changedUsername) {
         setUsername(changedUsername);
@@ -20,32 +23,45 @@ function Login({ navigation }): React.JSX.Element {
 
     function onClickLogin() {
         if (!username) {
-            alert("Username is required");
+            setLoginError("Username is required");
             return;
         }
 
         if (!password) {
-            alert("Password is required");
+            setLoginError("Password is required");
             return;
         }
 
-        const foundUser = users.find(user => user.username === username);
+        console.log("Calling the API")
+        setLoginLoading(true)
+        LoginUser(username, password).then((response) => {
+            console.log("response recieve", response.status)
+            if (response.status == 400) {
+                // Display an error message
+                setLoginError("All fields are required.")
+            } else if (response.status >= 200 && response.status < 300) {
+                response.json().then(data => {
+                    console.log(data)
+                    if (data.user_type == "GeneralPublic") {
+                        navigation.navigate("Option selection");
+                    } else if (data.user_type == "Ambulance") {
+                        navigation.navigate("Notification");
+                    }
+                }).catch(e => {
+                    console.log("Errosr response logge", e)
+                })
+            } else if (response.status >= 500) {
+                setLoginError("User name already exists. Try another.")
+            }
+            // response.json().then(console.log)
+        }).catch(e => {
+            console.log(e)
+            setLoginError("Something went wrong. Please try again later.")
+        }).finally(() => {
+            console.log("Finaling")
+            setLoginLoading(false)
+        })
 
-        if (!foundUser) {
-            alert("User not found");
-            return;
-        }
-
-        if (foundUser.password !== password) {
-            alert("Invalid password");
-            return;
-        }
-
-        if (foundUser.usertype === "general") {
-            navigation.navigate("Option selection");
-        } else if (foundUser.usertype === "emergency") {
-            navigation.navigate("Notification");
-        }
     }
 
     function toggleShowPassword() {
@@ -76,7 +92,6 @@ function Login({ navigation }): React.JSX.Element {
                     flexDirection: 'row',
                     alignItems: 'center',
                     backgroundColor: '#FFFFC6',
-                    color: '#000',
                     width: 390,
                     height: 50,
                     marginTop: 50,
@@ -85,7 +100,7 @@ function Login({ navigation }): React.JSX.Element {
                     marginLeft: 20,
                 }}>
                     <TextInput
-                        style={{ flex: 1 }}
+                        style={{ flex: 1, color: '#000' }}  // Added color property here
                         onChangeText={onPasswordChanged}
                         placeholder='Password'
                         placeholderTextColor={'#444'}
