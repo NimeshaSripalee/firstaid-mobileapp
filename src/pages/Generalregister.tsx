@@ -3,6 +3,7 @@ import { Button, ScrollView, Text, TextInput, TouchableOpacity, View } from 'rea
 import Welcome from '../components/welcome';
 import { users } from "../utils/data";
 import { registerGeneralUser } from '../api';
+import Styles from '../../styles/main'
 
 function RegisterUser({ navigation }) {
     const [username, setUsername] = useState("");
@@ -106,6 +107,9 @@ function RegisterUser({ navigation }) {
 
     return (
         <ScrollView>
+            <Text style={Styles.baseText} >
+                Hello testG
+            </Text>
             <View style={{ flex: 1, backgroundColor: 'white' }} >
                 <Welcome />
                 <Text style={{

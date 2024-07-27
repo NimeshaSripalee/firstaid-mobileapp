@@ -14,6 +14,17 @@
 		13B07FC11A68108700A75B9A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB71A68108700A75B9A /* main.m */; };
 		7699B88040F8A987B510C191 /* libPods-mobileapp-mobileappTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 19F6CBCC0A4E27FBF8BF4A61 /* libPods-mobileapp-mobileappTests.a */; };
 		81AB9BB82411601600AC10FF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */; };
+		BF5EC9942F174015BCFACBDE /* gothampro.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 02143B6E0B8C4B17AA402A1F /* gothampro.ttf */; };
+		E030027161FA41849002F6A8 /* gothampro_black.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 0C11F3CF101242BDAACA1386 /* gothampro_black.ttf */; };
+		AE150975BA174A3F925F9592 /* gothampro_blackitalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = C29F4B5C783D4978A84D20DD /* gothampro_blackitalic.ttf */; };
+		44D8FB4EC3F443ECAC65E15C /* gothampro_bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = AA99FB5802FC406583B94F7F /* gothampro_bold.ttf */; };
+		3F044E403302411FA50B5678 /* gothampro_bolditalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 3548CD577C99480197A72BE3 /* gothampro_bolditalic.ttf */; };
+		B334A7D112714935BBCF6979 /* gothampro_italic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = BC39620FA7B248C3BF3720B3 /* gothampro_italic.ttf */; };
+		6106C729DB734A31889BC7B7 /* gothampro_light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = D1C1ADA06FF34E4E9C59CAC0 /* gothampro_light.ttf */; };
+		44198AFF34F54A9F812F24DB /* gothampro_lightitalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = C9A0F6BE20B44E49A45B35C9 /* gothampro_lightitalic.ttf */; };
+		7B24B9CE1D8E4F758521C646 /* gothampro_medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 0B57CD500E814098A47F8D8D /* gothampro_medium.ttf */; };
+		3CC48A0E910743A5ACFA81E5 /* gothampro_mediumitalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 7693BD97D36344059B3C4B30 /* gothampro_mediumitalic.ttf */; };
+		365A0CE50D0D4DC6ACD87E26 /* COPYRIGHT.txt in Resources */ = {isa = PBXBuildFile; fileRef = 3E317C41F407499B9386B486 /* COPYRIGHT.txt */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -36,7 +47,7 @@
 		13B07FB51A68108700A75B9A /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Images.xcassets; path = mobileapp/Images.xcassets; sourceTree = "<group>"; };
 		13B07FB61A68108700A75B9A /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = Info.plist; path = mobileapp/Info.plist; sourceTree = "<group>"; };
 		13B07FB71A68108700A75B9A /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = main.m; path = mobileapp/main.m; sourceTree = "<group>"; };
-	    13B07FB81A68108700A75B9A /* PrivacyInfo.xcprivacy */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = PrivacyInfo.xcprivacy; path = mobileapp/PrivacyInfo.xcprivacy; sourceTree = "<group>"; };
+		13B07FB81A68108700A75B9A /* PrivacyInfo.xcprivacy */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = PrivacyInfo.xcprivacy; path = mobileapp/PrivacyInfo.xcprivacy; sourceTree = "<group>"; };
 		19F6CBCC0A4E27FBF8BF4A61 /* libPods-mobileapp-mobileappTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-mobileapp-mobileappTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		3B4392A12AC88292D35C810B /* Pods-mobileapp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-mobileapp.debug.xcconfig"; path = "Target Support Files/Pods-mobileapp/Pods-mobileapp.debug.xcconfig"; sourceTree = "<group>"; };
 		5709B34CF0A7D63546082F79 /* Pods-mobileapp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-mobileapp.release.xcconfig"; path = "Target Support Files/Pods-mobileapp/Pods-mobileapp.release.xcconfig"; sourceTree = "<group>"; };
@@ -45,6 +56,17 @@
 		81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = LaunchScreen.storyboard; path = mobileapp/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		89C6BE57DB24E9ADA2F236DE /* Pods-mobileapp-mobileappTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-mobileapp-mobileappTests.release.xcconfig"; path = "Target Support Files/Pods-mobileapp-mobileappTests/Pods-mobileapp-mobileappTests.release.xcconfig"; sourceTree = "<group>"; };
 		ED297162215061F000B7C4FE /* JavaScriptCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JavaScriptCore.framework; path = System/Library/Frameworks/JavaScriptCore.framework; sourceTree = SDKROOT; };
+		02143B6E0B8C4B17AA402A1F /* gothampro.ttf */ = {isa = PBXFileReference; name = "gothampro.ttf"; path = "../assets/fonts/gothampro.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		0C11F3CF101242BDAACA1386 /* gothampro_black.ttf */ = {isa = PBXFileReference; name = "gothampro_black.ttf"; path = "../assets/fonts/gothampro_black.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		C29F4B5C783D4978A84D20DD /* gothampro_blackitalic.ttf */ = {isa = PBXFileReference; name = "gothampro_blackitalic.ttf"; path = "../assets/fonts/gothampro_blackitalic.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		AA99FB5802FC406583B94F7F /* gothampro_bold.ttf */ = {isa = PBXFileReference; name = "gothampro_bold.ttf"; path = "../assets/fonts/gothampro_bold.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		3548CD577C99480197A72BE3 /* gothampro_bolditalic.ttf */ = {isa = PBXFileReference; name = "gothampro_bolditalic.ttf"; path = "../assets/fonts/gothampro_bolditalic.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		BC39620FA7B248C3BF3720B3 /* gothampro_italic.ttf */ = {isa = PBXFileReference; name = "gothampro_italic.ttf"; path = "../assets/fonts/gothampro_italic.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		D1C1ADA06FF34E4E9C59CAC0 /* gothampro_light.ttf */ = {isa = PBXFileReference; name = "gothampro_light.ttf"; path = "../assets/fonts/gothampro_light.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		C9A0F6BE20B44E49A45B35C9 /* gothampro_lightitalic.ttf */ = {isa = PBXFileReference; name = "gothampro_lightitalic.ttf"; path = "../assets/fonts/gothampro_lightitalic.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		0B57CD500E814098A47F8D8D /* gothampro_medium.ttf */ = {isa = PBXFileReference; name = "gothampro_medium.ttf"; path = "../assets/fonts/gothampro_medium.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		7693BD97D36344059B3C4B30 /* gothampro_mediumitalic.ttf */ = {isa = PBXFileReference; name = "gothampro_mediumitalic.ttf"; path = "../assets/fonts/gothampro_mediumitalic.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		3E317C41F407499B9386B486 /* COPYRIGHT.txt */ = {isa = PBXFileReference; name = "COPYRIGHT.txt"; path = "../assets/fonts/COPYRIGHT.txt"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -124,6 +146,7 @@
 				83CBBA001A601CBA00E9B192 /* Products */,
 				2D16E6871FA4F8E400B85C8A /* Frameworks */,
 				BBD78D7AC51CEA395F1C20DB /* Pods */,
+				5EAA2768B1D440A88B472048 /* Resources */,
 			);
 			indentWidth = 2;
 			sourceTree = "<group>";
@@ -149,6 +172,25 @@
 			);
 			path = Pods;
 			sourceTree = "<group>";
+		};
+		5EAA2768B1D440A88B472048 /* Resources */ = {
+			isa = "PBXGroup";
+			children = (
+				02143B6E0B8C4B17AA402A1F /* gothampro.ttf */,
+				0C11F3CF101242BDAACA1386 /* gothampro_black.ttf */,
+				C29F4B5C783D4978A84D20DD /* gothampro_blackitalic.ttf */,
+				AA99FB5802FC406583B94F7F /* gothampro_bold.ttf */,
+				3548CD577C99480197A72BE3 /* gothampro_bolditalic.ttf */,
+				BC39620FA7B248C3BF3720B3 /* gothampro_italic.ttf */,
+				D1C1ADA06FF34E4E9C59CAC0 /* gothampro_light.ttf */,
+				C9A0F6BE20B44E49A45B35C9 /* gothampro_lightitalic.ttf */,
+				0B57CD500E814098A47F8D8D /* gothampro_medium.ttf */,
+				7693BD97D36344059B3C4B30 /* gothampro_mediumitalic.ttf */,
+				3E317C41F407499B9386B486 /* COPYRIGHT.txt */,
+			);
+			name = Resources;
+			sourceTree = "<group>";
+			path = "";
 		};
 /* End PBXGroup section */
 
@@ -245,6 +287,17 @@
 			files = (
 				81AB9BB82411601600AC10FF /* LaunchScreen.storyboard in Resources */,
 				13B07FBF1A68108700A75B9A /* Images.xcassets in Resources */,
+				BF5EC9942F174015BCFACBDE /* gothampro.ttf in Resources */,
+				E030027161FA41849002F6A8 /* gothampro_black.ttf in Resources */,
+				AE150975BA174A3F925F9592 /* gothampro_blackitalic.ttf in Resources */,
+				44D8FB4EC3F443ECAC65E15C /* gothampro_bold.ttf in Resources */,
+				3F044E403302411FA50B5678 /* gothampro_bolditalic.ttf in Resources */,
+				B334A7D112714935BBCF6979 /* gothampro_italic.ttf in Resources */,
+				6106C729DB734A31889BC7B7 /* gothampro_light.ttf in Resources */,
+				44198AFF34F54A9F812F24DB /* gothampro_lightitalic.ttf in Resources */,
+				7B24B9CE1D8E4F758521C646 /* gothampro_medium.ttf in Resources */,
+				3CC48A0E910743A5ACFA81E5 /* gothampro_mediumitalic.ttf in Resources */,
+				365A0CE50D0D4DC6ACD87E26 /* COPYRIGHT.txt in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

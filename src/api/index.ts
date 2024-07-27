@@ -1,4 +1,4 @@
-const baseUrl = "http://192.168.1.5:3000"
+const baseUrl = "http://192.168.8.101:3000"
 
 export function registerGeneralUser(username:string, email:string, password:string){
     return fetch(`${baseUrl}/api/register/general-public`,{

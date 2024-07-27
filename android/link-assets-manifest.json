@@ -1,0 +1,49 @@
+{
+  "migIndex": 1,
+  "data": [
+    {
+      "path": "assets/fonts/COPYRIGHT.txt",
+      "sha1": "fe77d98a663730a211725b1effe137b57b4106a0"
+    },
+    {
+      "path": "assets/fonts/gothampro.ttf",
+      "sha1": "2d4b91c13dd38f9d175fcb70b7daa1ab17441a45"
+    },
+    {
+      "path": "assets/fonts/gothampro_black.ttf",
+      "sha1": "e30324f4074bcc522a393cecaa62aa4b0e9205cc"
+    },
+    {
+      "path": "assets/fonts/gothampro_blackitalic.ttf",
+      "sha1": "9988a48d9453251b9aefe2f3c450df6313336677"
+    },
+    {
+      "path": "assets/fonts/gothampro_bold.ttf",
+      "sha1": "f44b724b360c43c88ca3835af35ab101c04526a5"
+    },
+    {
+      "path": "assets/fonts/gothampro_bolditalic.ttf",
+      "sha1": "5523a3091dbc7173319d212b6db27e7fa01d2b33"
+    },
+    {
+      "path": "assets/fonts/gothampro_italic.ttf",
+      "sha1": "58be43473771fffcc0c151f1370419d2e3981d63"
+    },
+    {
+      "path": "assets/fonts/gothampro_light.ttf",
+      "sha1": "90a4c77049ae135a20b777805b0b777b93095dd6"
+    },
+    {
+      "path": "assets/fonts/gothampro_lightitalic.ttf",
+      "sha1": "ce0ccb898751eb167a4c6566276a67a4097f97ce"
+    },
+    {
+      "path": "assets/fonts/gothampro_medium.ttf",
+      "sha1": "fd7ae68afd0bfe9e6ef54e36a21518dd0697abcf"
+    },
+    {
+      "path": "assets/fonts/gothampro_mediumitalic.ttf",
+      "sha1": "ea4b7f2babfd68405d8f9f8f1c1867623b5f2b53"
+    }
+  ]
+}

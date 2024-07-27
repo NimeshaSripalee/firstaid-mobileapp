@@ -13,5 +13,11 @@ export default StyleSheet.create({
       fontSize: 20,
       color: '#FFFFFF', //WHITE
     },
-
+    fontNormal: {
+      fontFamily:'gothampro',
+    },
+    fontBold: {
+      fontFamily:'gothampro_bold',
+    },
+    
 });

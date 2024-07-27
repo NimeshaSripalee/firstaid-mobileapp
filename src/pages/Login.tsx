@@ -5,6 +5,7 @@ import { Colors } from 'react-native/Libraries/NewAppScreen';
 import { useNavigation } from '@react-navigation/native';
 import { users } from '../utils/data';
 import { LoginUser } from '../api';
+import Styles from '../../styles/main'
 
 function Login({ navigation }): React.JSX.Element {
     const [username, setUsername] = useState("");
@@ -125,7 +126,8 @@ function Login({ navigation }): React.JSX.Element {
                             alignItems: 'center',
                             borderRadius: 30,
                             paddingLeft: 50,
-                            marginTop: 80
+                            marginTop: 80,
+                            ...Styles.fontBold
                         }}
                     >
                         Login
