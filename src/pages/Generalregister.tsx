@@ -107,9 +107,6 @@ function RegisterUser({ navigation }) {
 
     return (
         <ScrollView>
-            <Text style={Styles.baseText} >
-                Hello testG
-            </Text>
             <View style={{ flex: 1, backgroundColor: 'white' }} >
                 <Welcome />
                 <Text style={{

@@ -126,8 +126,7 @@ function Login({ navigation }): React.JSX.Element {
                             alignItems: 'center',
                             borderRadius: 30,
                             paddingLeft: 50,
-                            marginTop: 80,
-                            ...Styles.fontBold
+                            marginTop: 80
                         }}
                     >
                         Login
