@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useContext, useState } from 'react';
 import { Alert, Button, Pressable, ScrollView, Text, TextInput, TouchableOpacity, View } from 'react-native';
 import Welcome from '../components/welcome';
 import { Colors } from 'react-native/Libraries/NewAppScreen';
@@ -6,6 +6,7 @@ import { useNavigation } from '@react-navigation/native';
 import { users } from '../utils/data';
 import { LoginUser } from '../api';
 import Styles from '../../styles/main'
+import { AuthContext } from '../ctx/AuthContext';
 
 function Login({ navigation }): React.JSX.Element {
     const [username, setUsername] = useState("");
@@ -13,6 +14,8 @@ function Login({ navigation }): React.JSX.Element {
     const [showPassword, setShowPassword] = useState(false);
     const [LoginLoading, setLoginLoading] = useState(false);
     const [LoginError, setLoginError] = useState("");
+
+    const {updateContextValue} = useContext(AuthContext)
 
     function onUsernameChanged(changedUsername) {
         setUsername(changedUsername);
@@ -43,6 +46,9 @@ function Login({ navigation }): React.JSX.Element {
             } else if (response.status >= 200 && response.status < 300) {
                 response.json().then(data => {
                     console.log(data)
+
+                    updateContextValue(true,data.username, data.id);
+                    
                     if (data.user_type == "GeneralPublic") {
                         navigation.navigate("Option selection");
                     } else if (data.user_type == "Ambulance") {
@@ -86,7 +92,7 @@ function Login({ navigation }): React.JSX.Element {
                     }}
                     onChangeText={onUsernameChanged}
                     placeholder='Username'
-                    placeholderTextColor={'#444'}
+                    placeholderTextColor={'red'}
                     value={username}
                 />
                 <View style={{
@@ -104,7 +110,7 @@ function Login({ navigation }): React.JSX.Element {
                         style={{ flex: 1, color: '#000' }}  // Added color property here
                         onChangeText={onPasswordChanged}
                         placeholder='Password'
-                        placeholderTextColor={'#444'}
+                        placeholderTextColor={'red'}
                         secureTextEntry={!showPassword}
                         value={password}
                     />
@@ -136,7 +142,7 @@ function Login({ navigation }): React.JSX.Element {
                     <Text
                         style={{
                             backgroundColor: 'white',
-                            color: '#8C05D3',
+                            color: 'red',
                             fontSize: 30,
                             alignItems: 'center',
                             marginLeft: 50,
@@ -146,6 +152,16 @@ function Login({ navigation }): React.JSX.Element {
                         New user? Register first
                     </Text>
                 </TouchableOpacity>
+                <Text style={{
+                            backgroundColor: 'white',
+                            color: '#8C05D3',
+                            fontSize: 10,
+                            alignItems: 'center',
+                            marginLeft: 50,
+                            marginTop: 80
+                        }}>
+                    v0.0.6
+                </Text>
                 <View style={{ backgroundColor: 'white', height: 100 }} />
             </View>
         </ScrollView>

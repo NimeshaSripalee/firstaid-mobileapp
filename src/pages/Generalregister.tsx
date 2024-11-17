@@ -81,14 +81,15 @@ function RegisterUser({ navigation }) {
         console.log("Calling the API")
         setRegisterLoading(true)
         registerGeneralUser(username, email, password).then((response)=>{
-            console.log("response recieve", response.status)
+            console.log("response recieve 1", response.status)
             if(response.status == 400){
                 // Display an error message
                 setRegisterError("All fields are required.")
             }else if(response.status >=  200 && response.status < 300){
                 navigation.navigate("Home");
             }else if(response.status >= 500){
-                setRegisterError("User name already exists. Try another.")
+                console.log(response.body)
+                setRegisterError("User name or Email already exists. Try another.")
             }
             // response.json().then(console.log)
         }).catch(e=>{

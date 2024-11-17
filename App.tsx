@@ -22,12 +22,14 @@ import Feedback from './src/pages/feedbacktwo';
 import LoginEmergency from './src/pages/Log as emergency';
 import Logout from './src/pages/Log out';
 import ChatBot from './src/pages/chatbbot';
+import { AuthProvider } from './src/ctx/AuthContext';
 
 
 
 const Stack = createNativeStackNavigator();
 function App(): React.JSX.Element {
     return (
+        <AuthProvider>
         <NavigationContainer>
             <Stack.Navigator>
                 <Stack.Screen
@@ -171,7 +173,7 @@ function App(): React.JSX.Element {
 
             </Stack.Navigator>
         </NavigationContainer>
-
+        </AuthProvider>
 
     );
 }

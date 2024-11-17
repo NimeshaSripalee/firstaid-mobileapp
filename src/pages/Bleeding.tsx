@@ -5,7 +5,7 @@ import React from 'react'
 const Bleeding = ({navigation}) => {
     return (
 
-    <Text style ={{fontSize: 50, color:'red', backgroundColor:'white'}}> Information about bleeding comes here </Text>
+    <Text style ={{fontSize: 50, color:'red', backgroundColor:'white'}}> Information about bleeding comes heress </Text>
 
 
     );

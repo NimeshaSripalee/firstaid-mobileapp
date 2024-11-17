@@ -1,20 +1,39 @@
 import { View, Text, Image, ScrollView, TextInput, TouchableOpacity } from 'react-native';
-import React, { useState } from 'react';
+import React, { useContext, useState } from 'react';
 import BottomNavBar from '../components/bottomnav';
+import { Rating } from 'react-native-ratings';
+import { submitFeedback } from '../api';
+import { AuthContext } from '../ctx/AuthContext';
 
 function Feedback(): React.JSX.Element {
-    const [selectedQ1, setSelectedQ1] = useState(null);
-    const [selectedQ2, setSelectedQ2] = useState(null);
-    const [message1, setMessage1] = useState('');
-    const [message2, setMessage2] = useState('');
+    const [selectedQ1, setSelectedQ1] = useState<string | null>(null);
+    const [selectedQ2, setSelectedQ2] = useState<string | null>(null);
+    const [suggestion, setSuggestions] = useState<string | null>(null);
+    const [comments, setComments] = useState<string | null>(null);
+    const [rating, setRating] = useState<number | null>(null);
 
-    const handleQ1Select = (option) => {
+    const handleQ1Select = (option:string) => {
         setSelectedQ1(option);
     };
 
-    const handleQ2Select = (option) => {
+    const handleQ2Select = (option:string) => {
         setSelectedQ2(option);
     };
+
+    const onFeedbackSubmit = ()=>{
+        submitFeedback({
+            userid: contextValue.userid,
+            q1:selectedQ1,
+            q2:selectedQ2,
+            suggestion,
+            comments,
+            rating
+        }).then(()=>{
+            console.log("Feedback saved");
+        })
+    }
+
+    const { contextValue } = useContext(AuthContext)
 
     return (
         <ScrollView>
@@ -34,7 +53,7 @@ function Feedback(): React.JSX.Element {
                         color: '#8C05D3',
                         fontSize: 40,
                         textAlign: 'center'
-                    }}>Give Feedback</Text>
+                    }}>Give Feedback </Text>
                 </View>
 
                 {/* Description */}
@@ -206,7 +225,7 @@ function Feedback(): React.JSX.Element {
                             fontSize: 18,
                             alignSelf: 'center'
                         }}
-                        onChangeText={setMessage1}
+                        onChangeText={setSuggestions}
                         placeholder='Type your suggestions here'
                         placeholderTextColor={'#444'}
                     />
@@ -224,7 +243,13 @@ function Feedback(): React.JSX.Element {
                     </Text>
                     <View style={{ flexDirection: 'row', justifyContent: 'center', marginVertical: 20 }}>
                         {/* Star Rating Placeholder */}
-                        <Text style={{ fontSize: 30, color: 'gold' }}>⭐⭐⭐⭐⭐</Text>
+                        <Rating
+                            type='heart'
+                            ratingCount={3}
+                            imageSize={60}
+                            showRating
+                            onFinishRating={setRating}
+                            />
                     </View>
                 </View>
 
@@ -250,7 +275,7 @@ function Feedback(): React.JSX.Element {
                             fontSize: 18,
                             alignSelf: 'center'
                         }}
-                        onChangeText={setMessage2}
+                        onChangeText={setComments}
                         placeholder='Type your comments here'
                         placeholderTextColor={'#444'}
                     />
@@ -264,12 +289,8 @@ function Feedback(): React.JSX.Element {
                         margin: 40,
                         padding: 10,
                         alignItems: 'center'
-                    }} onPress={() => alert("Feedback Saved!")}>
-                        <Text style={{
-                            color: 'white',
-                            fontSize: 20,
-                            textAlign: 'center'
-                        }}>
+                    }} onPress={onFeedbackSubmit}>
+                        <Text>
                             Save
                         </Text>
                     </TouchableOpacity>
