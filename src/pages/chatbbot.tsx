@@ -1,27 +1,38 @@
 // ChatBot.js
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { View, Text, TextInput, TouchableOpacity, ScrollView, StyleSheet } from 'react-native';
+import { sendChatMessage, startChat } from '../api';
 
 const ChatBot = () => {
     const [messages, setMessages] = useState([]);
     const [input, setInput] = useState("");
+    const [convoId, setConvoId] = useState<string>()
 
-    const handleSend = () => {
+
+    const handleSend = async () => {
         if (input.trim().length === 0) return;
 
         const userMessage = { text: input, sender: 'user' };
-        const botMessage = getBotResponse(input);
+        const botMessage =await getBotResponse(input);
 
         setMessages([...messages, userMessage, botMessage]);
         setInput("");
     };
 
-    const getBotResponse = (message) => {
-        let response = "Sorry, I don't understand that.";
-        if (message.toLowerCase().includes("burn")) {
-            response = "For a burn:\n1. Cool the burn under cool running water for at least 10 minutes.\n2. Protect the burn with a sterile gauze bandage.\n3. Do not apply butter, oil, or any other substances.\n4. Seek medical help if needed.";
+    const getBotResponse =async (message:string) => {
+        if(!convoId){
+            const res = await startChat()
+            const data = await res.json()
+            setConvoId(data.convo_id)
         }
-        return { text: response, sender: 'bot' };
+
+        const res = await sendChatMessage(convoId as string, message)
+        const data = await res.json()
+
+        return {
+            text: data.response, 
+            sender: "bot"
+        }
     };
 
     return (

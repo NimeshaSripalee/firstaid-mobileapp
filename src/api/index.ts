@@ -1,6 +1,32 @@
-export const baseUrl = "http://192.168.1.12:3000";
-// export const baseUrl = "http://35.238.168.196/test"
+export const baseUrl = "http://10.95.146.174:3000";
+export const chatBotBaseUrl = "http://192.168.8.101:8080"
 
+
+export function startChat(){
+    return fetch(`${chatBotBaseUrl}/start`,{
+        method:'POST',
+        headers: {
+            'Accept': 'application/json',
+            'Content-Type': 'application/json'
+        },
+    })   
+}
+
+export function sendChatMessage(convo_id:string, message:string){
+    console.log("sending chat message", convo_id, message)
+    return fetch(`${chatBotBaseUrl}`,{
+        method:'POST',
+        body:JSON.stringify({
+            convo_id, message
+        }),
+        headers: {
+            'Accept': 'application/json',
+            'Content-Type': 'application/json'
+        },
+    })   
+}
+
+// export const baseUrl = "http://35.238.168.196/test"
 export function registerGeneralUser(username:string, email:string, password:string){
     return fetch(`${baseUrl}/api/register/general-public`,{
         method:'POST',
