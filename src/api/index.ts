@@ -1,5 +1,5 @@
 export const baseUrl = "http://10.95.146.174:3000";
-export const chatBotBaseUrl = "http://192.168.8.101:8080"
+export const chatBotBaseUrl = "http://10.95.146.174:8080"
 
 
 export function startChat(){
@@ -12,12 +12,12 @@ export function startChat(){
     })   
 }
 
-export function sendChatMessage(convo_id:string, message:string){
-    console.log("sending chat message", convo_id, message)
+export function sendChatMessage(message:string){
+    console.log("sending chat message", "convo_id", message)
     return fetch(`${chatBotBaseUrl}`,{
         method:'POST',
         body:JSON.stringify({
-            convo_id, message
+            message
         }),
         headers: {
             'Accept': 'application/json',

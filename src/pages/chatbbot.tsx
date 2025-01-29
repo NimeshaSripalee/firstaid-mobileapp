@@ -20,19 +20,26 @@ const ChatBot = () => {
     };
 
     const getBotResponse =async (message:string) => {
-        if(!convoId){
-            const res = await startChat()
+        // if(!convoId){
+        //     const res = await startChat()
+        //     const data = await res.json()
+        //     setConvoId(data.convo_id)
+        // }
+
+        try {
+            const res = await sendChatMessage(message)
             const data = await res.json()
-            setConvoId(data.convo_id)
-        }
-
-        const res = await sendChatMessage(convoId as string, message)
-        const data = await res.json()
-
+        console.log("response  , ", data)
         return {
             text: data.response, 
             sender: "bot"
         }
+        } catch (error) {
+            console.log(error)
+        }
+
+
+
     };
 
     return (
